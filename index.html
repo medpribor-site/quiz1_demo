@@ -216,7 +216,7 @@
 
     <header>
         <h1>💊 药理连连看</h1>
-        <div class="stats">进度: <span id="score">0</span>/9</div>
+        <div class="stats">进度: <span id="score">0</span>/<span id="total">5</span></div>
     </header>
 
     <div class="controls">
@@ -335,6 +335,7 @@
 
         const grid = document.getElementById('gameGrid');
         const scoreEl = document.getElementById('score');
+        const totalEl = document.getElementById('total');
 
         // 初始化游戏
         function initGame() {
@@ -343,8 +344,8 @@
             selectedCards = [];
             matchedCount = 0;
             // 更新 UI 显示的进度分母
-            scoreEl.innerText = `${matchedCount}`;
-            document.querySelector('.stats').innerHTML = `进度: <span id="score">0</span>/${CARDS_PER_ROUND}`;
+            scoreEl.innerText = matchedCount;
+            if (totalEl) totalEl.innerText = CARDS_PER_ROUND;
             isLocked = false;
 
             // --- 核心修改开始 ---
