@@ -245,9 +245,6 @@
     <script>
         // 新增：每局随机抽取的药品数量（建议设为 4 或 5）
         const CARDS_PER_ROUND = 5;
-        // --- 新增音频对象 ---
-        const dingSound = new Audio('DING.WAV');
-        const tadaSound = new Audio('TADA.WAV');
         // --- 核心知识数据提取 ---
         const drugData = [
             {
@@ -435,10 +432,6 @@
                     scoreEl.innerText = matchedCount;
                     showToast("✅ 药理知识 +1");
 
-                    // --- 新增：播放匹配成功音效 ---
-                    let currentDing = dingSound.cloneNode(true);
-                    currentDing.play().catch(e => console.log('当前浏览器限制自动播放:', e));
-
                     if (matchedCount === CARDS_PER_ROUND) {
                         setTimeout(showWinScreen, 500);
                     }
@@ -491,9 +484,6 @@
                 });
                 body.innerHTML = knowledgeHTML;
             } else if (type === 'win') {
-                // --- 新增：播放通关音效 ---
-                let currentTada = tadaSound.cloneNode(true);
-                currentTada.play().catch(e => console.log('当前浏览器限制自动播放:', e));
                 title.innerText = '🎉 考核通过！';
                 body.innerHTML = `
                     <div style="text-align:center; padding: 20px 0;">
