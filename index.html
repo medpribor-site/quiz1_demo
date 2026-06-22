@@ -245,6 +245,9 @@
     <script>
         // 新增：每局随机抽取的药品数量（建议设为 4 或 5）
         const CARDS_PER_ROUND = 5;
+        // --- 新增音频对象 ---
+        const dingSound = new Audio('DING.WAV');
+        const tadaSound = new Audio('TADA.WAV');
         // --- 核心知识数据提取 ---
         const drugData = [
             {
@@ -283,8 +286,8 @@
                 name: "盐酸胺碘酮针(150mg/3ml)",
                 facts: [
                     "[作用]广谱抗心律失常药",
-                    "[临床应用]适用于室颤/无脉性室速，室上速，室性心律失常, 初次剂量150mg10min静脉推注",
-                    "[注意事项]可致血压下降，心率减慢"
+                    "[临床应用]适用于室颤/无脉性室速，室上速，室性心律失常 1.初次剂量150mg10分钟静脉缓慢推注，1分钟后可重复。缓慢静滴维持1mg/分X6小时（360mg），接着0.5mg/分钟X18小时（540mg）。室颤/无脉性室速初始剂量为300mg，3-5分钟可重复150mg，最大累积量2.2giv/24",
+                    "[注意事项]可致血压下降，心跳减慢，引发尖端扭转性室速、甲状腺机能障碍、肺纤维化及呼吸窘迫综合征"
                 ] },
             {
                 id: 6,
@@ -304,7 +307,7 @@
                 ] },
             {
                 id: 8,
-                name: "去乙酰毛花针(0.4mg/2ml)",
+                name: "去乙酰毛花苷针(0.4mg/2ml)",
                 facts: [
                     "[作用]1.加强心肌收缩力。2.增加心功能不全患者的心输出量。3.减慢心率。",
                     "[临床应用]1.治疗慢性心功能不全。2.某些心律失常：房颤、房扑、阵发性室上性心动过速。",
@@ -319,13 +322,6 @@
                     "[临床应用]1.严重感染或炎症。2.自身免疫性疾病和过敏性疾病。3.抗休克治疗：过敏性休克仍应首选肾上腺素。4.替代疗法：急、慢性肾上腺皮质功能减退症。5.血液系统疾病：再障，白血病等。",
                     "[注意事项]1.常见不良反应：（1）类肾上腺皮质功能亢进综合症：满月脸、水牛肩、向心性肥胖、低血钾、高血压、高血糖等。（2）诱发或加重感染。（3）消化性溃疡。（4）心血管系统；长期应用可致高血压、动脉粥样硬化等。（5）骨质疏松、肌肉萎缩、伤口不易愈合、影响小孩生长发育等。（6）其他：精神兴奋等。2.防止停药反应：不可骤然停药。"
                 ] },
-            {
-                id: 10,
-                name: "item_10_name",
-                facts: [
-                    "item_10_desc_01",
-                    "item_10_desc_02"
-                ] }
         ];
 
         let cards = [];
@@ -439,6 +435,10 @@
                     scoreEl.innerText = matchedCount;
                     showToast("✅ 药理知识 +1");
 
+                    // --- 新增：播放匹配成功音效 ---
+                    dingSound.currentTime = 0; // 确保连续快速匹配时能重复播放
+                    dingSound.play().catch(e => console.log('浏览器限制自动播放音效:', e));
+
                     if (matchedCount === CARDS_PER_ROUND) {
                         setTimeout(showWinScreen, 500);
                     }
@@ -491,6 +491,9 @@
                 });
                 body.innerHTML = knowledgeHTML;
             } else if (type === 'win') {
+                // --- 新增：播放通关音效 ---
+                tadaSound.currentTime = 0;
+                tadaSound.play().catch(e => console.log('浏览器限制自动播放音效:', e));
                 title.innerText = '🎉 考核通过！';
                 body.innerHTML = `
                     <div style="text-align:center; padding: 20px 0;">
