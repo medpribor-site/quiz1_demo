@@ -243,9 +243,9 @@
     </div>
 
     <script>
-        // 新增：每局随机抽取的药品数量（建议设为 4 或 5）
+
         const CARDS_PER_ROUND = 5;
-        // --- 核心知识数据提取 ---
+
         const drugData = [
             {
                 id: 1,
@@ -253,14 +253,14 @@
                 facts: [
                     "[作用]主要是激动α和β受体。兴奋α受体：使周围血管收缩，血压升高。兴奋β1受体:即兴奋心脏,加强心肌收缩力，加强传导。兴奋β2受体：舒张支气管平滑肌。",
                     "[临床应用] 1.心肺复苏。首选药，1mg iv隔3-5分一次,失败考虑剂量递增。2.过敏性休克。皮下或肌肉注射0.5-1mg,肌肉吸收较皮下吸收快,但维持时间短。皮下注射，6-15分钟起效,作用维持1小时.肌肉注射维持30分钟。3.支气管哮喘。皮下或肌肉注射后数分钟内即起效。4.与局麻药配伍及局部止血。5.血管神经性水肿及血清病。",
-                    "[注意事项]1.肾上腺素气管内滴注时必须用NS稀释。2.肾上腺素不能直接加入SB中,因可使之部分灭活。3.不良反应为心悸、烦躁、头痛和血压升高、心律失常等。剂量过大时，有诱发脑溢血危险。4.禁用于高血压、脑动脉硬化、器质性心脏病、糖尿病、甲亢等。"
+                    "[注意事项]1.本药品气管内滴注时必须用NS稀释。2.本药品不能直接加入SB中,因可使之部分灭活。3.不良反应为心悸、烦躁、头痛和血压升高、心律失常等。剂量过大时，有诱发脑溢血危险。4.禁用于高血压、脑动脉硬化、器质性心脏病、糖尿病、甲亢等。"
                 ] },
             {
                 id: 2,
                 name: "去甲肾上腺素针(2mg/1ml)",
                 facts: [
                     "[作用]本药主要兴奋α受体.具有很强的血管收缩作用,使外周阻力升高,血压升高.对β受体作用弱。",
-                    "[临床应用]1.休克：主要用于神经性休克早期血压骤降时。2.上消化道出血:1-3mg适当稀释后口服。3.药物中毒性低血压：尤其是氯丙嗪,立其丁等引起的低血压可用去甲肾上腺素对抗。",
+                    "[临床应用]1.休克：主要用于神经性休克早期血压骤降时。2.上消化道出血:1-3mg适当稀释后口服。3.药物中毒性低血压：尤其是氯丙嗪,立其丁等引起的低血压可用本药品对抗。",
                     "[注意事项]1.静脉滴注时应注意局部组织情况，防止药液外漏引起局部组织坏死，不宜肌注或皮下注射。如发现外漏或注射部位皮肤苍白，应立即热敷，并用普鲁卡因α受体阻断药作局部浸润注射。2.本品不宜与氨茶碱，乳酸钠，SB，谷氨酸钠，青霉素G钾等配伍静滴。3.用药量过大或时间过长，出现急性肾衰。4.高血压，动脉硬化及器质性心脏病禁用。"
                 ] },
             {
@@ -269,14 +269,14 @@
                 facts: [
                     "[作用]本药主要为β受体兴奋药，可增强心肌收缩力，加快心率，扩张周围血管及支气管。",
                     "[临床应用]1.支气管哮喘：以舌下或喷雾给药，疗效快而强。2.房室传导阻滞或心率极度缓慢者：0.5—1mg加入5%GS 250ml—500ml，开始宜慢，根据心率和心律反应来确定最低有效剂量，滴速一般为2——20ug/分，心率维持在60—70次/分。",
-                    "[注意事项]1.用量过大易引起心率失常。2.洋地黄中毒、低钾血症时禁用异丙肾上腺素。3.哮喘病人长期滥用异丙肾上腺素可引起猝死。"
+                    "[注意事项]1.用量过大易引起心率失常。2.洋地黄中毒、低钾血症时禁用本药品。3.哮喘病人长期滥用异丙肾上腺素可引起猝死。"
                 ] },
             {
                 id: 4, name: "硫酸阿托品针(0.5mg/1ml)",
                 facts: [
                     "[作用]抗胆碱药：M胆碱受体阻断药。1.抑制腺体分泌。2.扩瞳、眼内压升高。3.松弛内脏平滑肌4.解除迷走神经对心脏的抑制作用，使心率加快。",
-                    "[临床应用]1.解除平滑肌痉挛：治疗内脏绞痛。2.制止腺体分泌：术前用药等。3.心脏复苏的常用药之一。如迷走反射和阿斯综合症所致心搏骤停，阿托品0.5—1mg iv，必要时重复使用。4.心血管急症：窦性停搏、严重窦性心动过缓、房室传导阻滞或心室停搏，阿托品0.5—1mg iv，必要时重复使用。5.有机磷农药中毒的首选药。6.抗休克：如感染性休克。",
-                    "[注意事项]1.不宜与碱性药物配伍使用。2.心肌梗塞和心动过速者慎用。3.青光眼和前列腺肥大者禁用。4.常见不良反应：口干、视力模糊、心率加快、瞳孔扩大及皮肤潮红等。大剂量的阿托品可兴奋中枢神经，表现烦燥、詹妄等，严重中毒可兴奋转入抑制，出现昏迷、呼吸麻痹而死亡。"
+                    "[临床应用]1.解除平滑肌痉挛：治疗内脏绞痛。2.制止腺体分泌：术前用药等。3.心脏复苏的常用药之一。如迷走反射和阿斯综合症所致心搏骤停，本药品0.5—1mg iv，必要时重复使用。4.心血管急症：窦性停搏、严重窦性心动过缓、房室传导阻滞或心室停搏，本药品0.5—1mg iv，必要时重复使用。5.有机磷农药中毒的首选药。6.抗休克：如感染性休克。",
+                    "[注意事项]1.不宜与碱性药物配伍使用。2.心肌梗塞和心动过速者慎用。3.青光眼和前列腺肥大者禁用。4.常见不良反应：口干、视力模糊、心率加快、瞳孔扩大及皮肤潮红等。大剂量的本药品可兴奋中枢神经，表现烦燥、詹妄等，严重中毒可兴奋转入抑制，出现昏迷、呼吸麻痹而死亡。"
                 ] },
             {
                 id: 5,
@@ -300,7 +300,7 @@
                 facts: [
                     "[作用]本药为α受体、β受体和外周多巴胺受体激动药。不同剂量产生作用不同。小剂量： 0、5－2 ug/min/Kg，以兴奋多巴胺受体为主，即扩张肾血管。中剂量：2－10 ug/min/Kg，以兴奋多巴胺及β受体为主，对心肌产生正性应力作用，使心排血量增加、收缩压升高。大剂量：10 ug/min/Kg以上，除了兴奋多巴胺及β受体以外，兴奋α受体，导致血管收缩，致使收缩压及舒张压均增高。",
                     "[临床应用]1.抗休克。2.与利尿药合用治疗急性肾衰。",
-                    "[注意事项]1.使用多巴胺之前，应补充血容量和纠正酸中毒。2.静脉用药外溢，皮肤组织坏死与去甲肾上腺素一样处理。"
+                    "[注意事项]1.使用本药品之前，应补充血容量和纠正酸中毒。2.静脉用药外溢，皮肤组织坏死与去甲肾上腺素一样处理。"
                 ] },
             {
                 id: 8,
@@ -330,42 +330,32 @@
         const scoreEl = document.getElementById('score');
         const totalEl = document.getElementById('total');
 
-        // 初始化游戏
         function initGame() {
             grid.innerHTML = '';
             cards = [];
             selectedCards = [];
             matchedCount = 0;
-            // 更新 UI 显示的进度分母
+
             scoreEl.innerText = matchedCount;
             if (totalEl) totalEl.innerText = CARDS_PER_ROUND;
             isLocked = false;
 
-            // --- 核心修改开始 ---
-            // 1. 将完整的药品总库先随机打乱
             const shuffledPool = [...drugData].sort(() => Math.random() - 0.5);
 
-            // 2. 从打乱的总库中，截取我们需要的数量（例如 4 个）
             const currentRoundDrugs = shuffledPool.slice(0, CARDS_PER_ROUND);
 
-            // 3. 仅用这几个抽出的药品生成卡片数据
             currentRoundDrugs.forEach(drug => {
-                // 固定推入药品名称卡
+
                 cards.push({ type: 'name', text: drug.name, matchId: drug.id });
 
-                // 从该药品的 facts 数组中【随机抽取一项】作为本轮配对文本
                 const randomFactIndex = Math.floor(Math.random() * drug.facts.length);
                 const chosenFact = drug.facts[randomFactIndex];
 
-                // 推入随机抽取的属性卡，类型依然保持 'desc'
                 cards.push({ type: 'desc', text: chosenFact, matchId: drug.id });
             });
-            // --- 核心修改结束 ---
 
-            // 4. 将生成的这一小批卡片在桌面上彻底洗牌
             cards.sort(() => Math.random() - 0.5);
 
-            // 渲染 DOM
             cards.forEach((card, index) => {
                 const cardEl = document.createElement('div');
                 cardEl.classList.add('card', card.type + '-type');
@@ -378,36 +368,29 @@
         }
 
         function handleCardClick(cardEl, cardData) {
-            // 防抖和无效点击过滤（已被消除的卡片无法点击）
+
             if (isLocked || cardEl.classList.contains('matched')) {
                 return;
             }
 
-            // 如果点击的是当前已经选中的那张卡片，则取消选中
             if (cardEl.classList.contains('selected')) {
                 cardEl.classList.remove('selected');
                 selectedCards = [];
                 return;
             }
 
-            // 如果已经有一张卡片被选中了
             if (selectedCards.length === 1) {
                 const firstCard = selectedCards[0];
 
-                // 检查当前点击的卡片是否与第一张卡片类型相同
                 if (firstCard.data.type === cardData.type) {
-                    // 同类型切换：取消第一张卡片的选中状态
                     firstCard.el.classList.remove('selected');
-                    // 清空选择数组，准备放入新卡片
                     selectedCards = [];
                 }
             }
 
-            // 选中当前点击的卡片
             cardEl.classList.add('selected');
             selectedCards.push({ el: cardEl, data: cardData });
 
-            // 凑齐两张不同类型的卡片，开始校验
             if (selectedCards.length === 2) {
                 checkMatch();
             }
@@ -417,7 +400,6 @@
             isLocked = true;
             const [card1, card2] = selectedCards;
 
-            // 检查逻辑：ID相同 且 类型不同（不能同时选两个药名或两个描述，尽管洗牌后几率低，但逻辑要严密）
             const isMatch = (card1.data.matchId === card2.data.matchId) &&
                             (card1.data.type !== card2.data.type);
 
@@ -456,7 +438,6 @@
             isLocked = false;
         }
 
-        // --- UI 工具函数 ---
         function showToast(msg) {
             const toast = document.getElementById('toast');
             toast.innerText = msg;
@@ -488,7 +469,7 @@
                 body.innerHTML = `
                     <div style="text-align:center; padding: 20px 0;">
                         <h2 style="color:var(--success); margin-bottom: 10px;">恭喜你！</h2>
-                        <p>你已成功通过本组药理要点盲测。</p>
+                        <p>你已成功通过本组测验。</p>
                         <button class="btn-primary" style="margin-top: 20px; font-size:1rem; padding: 10px 25px;" onclick="closeModal(true); initGame();">再来一局</button>
                     </div>
                 `;
